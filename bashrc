@@ -378,6 +378,7 @@ alias mv='mv -i'
 #alias for working with yum
 alias update='sudo yum update'
 alias check='yum check-update'
+alias install='sudo yum install'
 alias search='yum search'
 
 alias h='history'
