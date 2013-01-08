@@ -77,7 +77,6 @@ if [ -x /usr/bin/fortune ] && [ -x /usr/bin/cowsay ]; then
         fortune 50% love 10% medicine 10% linux 10% science 10% computers 10% education | cowsay -f /usr/share/cowsay/$COW
 fi 
 
-
 #--------------------------------------------------------------
 #  Automatic setting of $DISPLAY (if not set already).
 #  This works for me - your mileage may vary. . . .
@@ -374,6 +373,12 @@ alias cp='cp -i'
 alias mv='mv -i'
 # -> Prevents accidentally clobbering files.
 #alias mkdir='mkdir -p'
+
+
+#alias for working with yum
+alias update='sudo yum update'
+alias check='yum check-update'
+alias search='yum search'
 
 alias h='history'
 alias j='jobs -l'
