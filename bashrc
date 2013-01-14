@@ -70,11 +70,14 @@ fi
 
 #---------------------------------------
 #The simple version of the program above
-#just with fortune and cowsay
+#just with fortune and cowsay.
+#Don't execute this code for root.
 #---------------------------------------
-if [ -x /usr/bin/fortune ] && [ -x /usr/bin/cowsay ]; then
-	COW=$(ls /usr/share/cowsay | shuf -n1)
-        fortune 50% love 10% medicine 10% linux 10% science 10% computers 10% education | cowsay -f /usr/share/cowsay/$COW
+if [[ $EUID -ne 0 ]]; then
+	if [ -x /usr/bin/fortune ] && [ -x /usr/bin/cowsay ]; then
+		COW=$(ls /usr/share/cowsay | shuf -n1)
+        	fortune 50% love 10% medicine 10% linux 10% science 10% computers 10% education | cowsay -f /usr/share/cowsay/$COW
+	fi
 fi 
 
 #--------------------------------------------------------------
