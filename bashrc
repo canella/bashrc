@@ -373,6 +373,9 @@ export HOSTFILE=$HOME/.hosts    # Put a list of remote hosts in ~/.hosts
 # Personnal Aliases
 #-------------------
 
+#find command option to link a library
+alias find_cflag='pkg-config --libs'
+
 alias rm='rm -i'
 alias cp='cp -i'
 alias mv='mv -i'
