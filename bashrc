@@ -388,6 +388,7 @@ alias update='sudo yum update'
 alias check='yum check-update'
 alias install='sudo yum install'
 alias search='yum search'
+alias builddep='sudo yum-builddep'
 
 alias h='history'
 alias j='jobs -l'
