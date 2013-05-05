@@ -391,6 +391,7 @@ alias search='yum search'
 alias builddep='sudo yum-builddep'
 
 alias h='history'
+alias remove_history='rm ~/.bash_history -f && history -c'
 alias j='jobs -l'
 alias which='type -a'
 alias ..='cd ..'
