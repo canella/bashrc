@@ -445,6 +445,11 @@ export LESS_TERMCAP_ue=$'\E[0m'
 export LESS_TERMCAP_us=$'\E[01;32m'
 
 
+# Set CPLUS_INCLUDE_PATH, so that the samba directory is
+# also used, without being specified by the -I option of
+# GCC
+export CPLUS_INCLUDE_PATH='/usr/include/samba*'
+
 #-------------------------------------------------------------
 # Spelling typos - highly personnal and keyboard-dependent :-)
 #-------------------------------------------------------------
