@@ -76,7 +76,7 @@ fi
 if [[ $EUID -ne 0 ]]; then
 	if [ -x /usr/bin/fortune ] && [ -x /usr/bin/cowsay ]; then
 		COW=$(ls /usr/share/cowsay | shuf -n1)
-        	fortune 50% love 10% medicine 10% linux 10% science 10% computers 10% education | cowsay -f /usr/share/cowsay/$COW
+        	fortune 10% love 10% medicine 10% linux 10% science 10% computers 10% education 10% law 10% literature 10% wisdom 10% riddles | cowsay -f /usr/share/cowsay/$COW
 	fi
 fi 
 
