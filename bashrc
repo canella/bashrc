@@ -383,6 +383,9 @@ alias mv='mv -i'
 #alias mkdir='mkdir -p'
 
 
+#open last edited file
+alias edit_last_opened="vi `ls -t | head -1`"
+
 #alias for working with yum
 alias update='sudo yum update'
 alias check='yum check-update'
@@ -697,6 +700,9 @@ function corename()   # Get name of app that created a corefile.
         echo -n $file : ; gdb --core=$file --batch | head -1
     done
 }
+
+#create new directory and cd into it
+function mkdircd () { mkdir -p "$@" && eval cd "\"\$$#\""; } 
 
 
 #=========================================================================
