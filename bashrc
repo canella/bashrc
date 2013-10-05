@@ -382,6 +382,8 @@ alias mv='mv -i'
 # -> Prevents accidentally clobbering files.
 #alias mkdir='mkdir -p'
 
+#alias to always start ocaml with the program rlwrap to allow scrolling
+alias myocaml='rlwrap ocaml'
 
 #open last edited file
 alias edit_last_opened="vi `ls -t | head -1`"
