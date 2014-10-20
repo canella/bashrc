@@ -397,16 +397,18 @@ alias builddep='sudo yum-builddep'
 
 alias h='history'
 alias remove_history='rm ~/.bash_history -f && history -c'
-alias j='jobs -l'
 alias which='type -a'
 alias ..='cd ..'
 
 # Pretty-print of some PATH variables:
 alias path='echo -e ${PATH//:/\\n}'
 alias libpath='echo -e ${LD_LIBRARY_PATH//:/\\n}'
+#start interactive version of top:
+alias top="htop"
 
 
 alias du='du -kh'    # Makes a more readable output.
+alias du_i="ncdu"    # an interactive version of du
 alias df='df -kTh'
 
 #-------------------------------------------------------------
@@ -454,6 +456,7 @@ export LESS_TERMCAP_us=$'\E[01;32m'
 # also used, without being specified by the -I option of
 # GCC
 export CPLUS_INCLUDE_PATH='/usr/include/samba*'
+export PATH=$PATH':/usr/local/cuda-6.5/bin'
 
 #-------------------------------------------------------------
 # Spelling typos - highly personnal and keyboard-dependent :-)
@@ -548,9 +551,19 @@ Usage: fstr [-i] \"pattern\" [\"filename pattern\"] "
     fi
     find . -type f -name "${2:-*}" -print0 | \
 xargs -0 egrep --color=always -sn ${case} "$1" 2>&- | more
-
 }
 
+#list all files with a given extension
+function lsext()
+{
+    find . -type f -iname '*.'${1}'' -exec ls -l {} \; ;
+}
+
+#create a backup of a given file
+function backup()
+{
+	cp $1 $1.bak
+}
 
 function swap()
 { # Swap 2 filenames around, if they exist (from Uzi's bashrc).
@@ -655,6 +668,11 @@ function my_ip() # Get IP adress on ethernet.
     MY_IP=$(/sbin/ifconfig eth0 | awk '/inet/ { print $2 } ' |
       sed -e s/addr://)
     echo ${MY_IP:-"Not connected"}
+}
+
+# list network connections
+function lsnet(){ 
+        lsof -i  | awk '{printf("%-14s%-20s%s\n", $10, $1, $9)}' | sort 
 }
 
 function ii()   # Get current host related info.
