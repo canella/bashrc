@@ -400,6 +400,7 @@ alias h='history'
 alias remove_history='rm ~/.bash_history -f && history -c'
 alias which='type -a'
 alias ..='cd ..'
+alias latex_clean='rm *.log *.out *.gz *.aux'
 
 # Pretty-print of some PATH variables:
 alias path='echo -e ${PATH//:/\\n}'
